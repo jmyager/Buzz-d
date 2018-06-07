@@ -40,8 +40,9 @@
 
     <!-- Current Available Barbers -->
 
-    <h4>Available Barbers</h4>
-    <div id="barberSection">
+    <h2 class="text-center">Available Barbers</h2>
+    <hr>
+    <div class="row" id="barberSection">
     </div>
 
 
@@ -107,15 +108,37 @@
           barberSectionBody.append(barberSectionText);
           // Add body div with details to Bootstrap Card Div
           barberSection.append(barberSectionBody);
+          
+          var barberCol = $("<div class='col-md-4'>");
+          barberCol.append(barberSection);
+          $("#barberSection").append(barberCol);
 
-          // Append newly created barber card to page div
-          $("#barberSection").append(barberSection);
+
+          ///////////////////////////////////////////////////////
+
+          // // Create row for every 2 cards
+          // if (i % 2 === 0) {
+          //   var barberRow = $("<div class='row' id='barberRow-" + i + "'>");
+          //   var barberCol = $("<div class='col-md-4'>");
+          //   barberCol.append(barberSection);
+          //   barberRow.append(barberCol);
+          //   $("#barberSection").append(barberRow);
+          // }
+          // // Don't create row if first card of new row
+          // else {
+          //   // Append newly created barber card to page div
+          //   $("#barberRow-" + i - 1).append(barberSection);
+          // }
+
+          /////////////////////////////////////////////////
+
+
 
         }
       });
   }
 
- 
+
 
   // This function resets all of the data in our tables. This is intended to let you restart a demo.
   function clearBarber() {
@@ -138,7 +161,6 @@
   // Run Queries!
   // ==========================================
   runBarberQuery();
-  runWaitListQuery();
 
 
 </script>
