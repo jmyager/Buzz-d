@@ -1,0 +1,24 @@
+{
+  "name": "groove",
+  "version": "1.0.0",
+  "description": "A groovy app that lets barbers manage clients with ease.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmyager/groove.git"
+  },
+  "author": "Josh Yager, Shreedhar Amin, Lucy Julian, Salem Ezz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmyager/groove/issues"
+  },
+  "homepage": "https://github.com/jmyager/groove#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
