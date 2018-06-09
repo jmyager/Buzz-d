@@ -1,16 +1,24 @@
-var mysql = require('mysql');
-var connection;
+// *********************************************************************************
+// CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
+// *********************************************************************************
 
-if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
+// Dependencies
+var Sequelize = require("sequelize");
+
+// Creates mySQL connection using Sequelize, the empty string in the third argument spot is our password.
+var sequelize;
+
+if (config.use_env_variable) {
+    var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
-    connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '',
-        database: 'groove_db'
+    var sequelize = new Sequelize('groove_db', 'root', '', {
+        host: "127.0.0.1",
+        dialect: 'mysql',
+        define: {
+            timestamps: false
+        }
     });
 };
 
-connection.connect();
-module.exports = connection;
+// Exports the connection for other files to use
+module.exports = sequelize;
