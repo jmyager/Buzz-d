@@ -4,10 +4,10 @@ var Sequelize = require("sequelize");
 module.exports = function(sequelize, DataTypes) {
     var Booking = sequelize.define("Booking", {
         client_id: {
-          type: Sequelize.TINYINT
+          type: Sequelize.SMALLINT
         },
         barber_id: {
-          type: Sequelize.TINYINT
+          type: Sequelize.SMALLINT
         },
         booking_date: {
           type: Sequelize.INTEGER
@@ -18,11 +18,6 @@ module.exports = function(sequelize, DataTypes) {
       }, {
         timestamps: false
     });
-    return Barber;
+    return Booking;
 };
   
-
-client_id SMALLINT NOT NULL REFERENCES clients(id),
-    barber_id SMALLINT NOT NULL REFERENCES barbers(id),
-    booking_date INT NOT NULL,
-    booking_time INT NOT NULL,
