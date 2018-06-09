@@ -1,45 +1,28 @@
-// // ===============================================================================
-// // LOAD DATA
-// // We are linking our routes to a series of "data" sources.
-// // These data sources hold arrays of information on barber data and booked customer data etc.
-// // ===============================================================================
-
-// var barberData = require("../data/barberData");
-// var bookedData = require("../data/bookedData");
-
 var db = require("../models");
 
-// ===============================================================================
-// ROUTING
-// ===============================================================================
-
 module.exports = function(app) {
-  
+
   app.get("/api/barbers", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Barber.findAll({}).then(function(dbBarbers) {
-      // We have access to the todos as an argument inside of the callback function
+      // We have access to the barbers as an argument inside of the callback function
       res.json(dbBarbers);
     });
   });
 
-  // POST route for saving a new todo
+  // POST route for saving a new client
   app.post("/api/clients", function(req, res) {
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property
     db.Client.create({
       client_name: req.body.client_name,
       client_email: req.body.client_email,
       client_phone: req.body.client_phone
     }).then(function(dbClient) {
-      // We have access to the new todo as an argument inside of the callback function
       res.json(dbClient);
     });
   });
-
+  
+  // POST route for saving a new booking
   app.post("/api/bookings", function(req, res) {
-
     db.Booking.create({
       client_id: req.body.client_id,
       barber_id: req.body.barber_id,
@@ -51,6 +34,22 @@ module.exports = function(app) {
   });
 
 };
+
+
+
+// // ===============================================================================
+// // LOAD DATA
+// // We are linking our routes to a series of "data" sources.
+// // These data sources hold arrays of information on barber data and booked customer data etc.
+// // ===============================================================================
+
+// var barberData = require("../data/barberData");
+// var bookedData = require("../data/bookedData");
+
+// ===============================================================================
+// ROUTING
+// ===============================================================================
+
 
 // API GET Requests
 // Below code handles when users "visit" a page.
