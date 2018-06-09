@@ -17,9 +17,15 @@ var app = express();
 // Sets an initial port. We"ll use this later in our listener
 var PORT = process.env.PORT || 8080;
 
+// Requiring our models for syncing
+var db = require("./models");
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Static directory
+app.use(express.static("public"));
 
 // ================================================================================
 // ROUTER
@@ -27,15 +33,16 @@ app.use(bodyParser.json());
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/apiRoutes.js")(app);
+require("./routes/htmlRoutes.js")(app);
 
 // =============================================================================
 // LISTENER
 // The below code effectively "starts" our server
 // =============================================================================
-
-app.listen(PORT, function() {
-  console.log("App listening on PORT: " + PORT);
-  console.log("http://localhost:8080/");
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT: " + PORT);
+    console.log("http://localhost:8080/");
+  });
 });
