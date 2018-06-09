@@ -1,4 +1,5 @@
 // SEQUELIZE VERSION //
+var Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
     var Client = sequelize.define("Client", {
