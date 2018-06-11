@@ -9,9 +9,6 @@ module.exports = function(sequelize, DataTypes) {
         barber_id: {
           type: Sequelize.SMALLINT
         },
-        booking_date: {
-          type: Sequelize.INTEGER
-        },
         booking_time: {
           type: Sequelize.INTEGER
         }

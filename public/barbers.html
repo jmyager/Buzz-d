@@ -107,7 +107,7 @@
           
           var barberSectionText = $("<div class='card-text'>");
           barberSectionText.append("<p class='card-text'>" + "Speciality: " + barberData[i].specialty + "<br>" + "Phone: " + barberData[i].barber_phone + "<br>" + "Email: " + barberData[i].barber_email + "</p>")
-          barberSectionText.append("<a href='#' class='btn btn-primary'>Book</a>");
+          barberSectionText.append("<a href='/" + barberData[i].id + "/book' class='btn btn-primary'>Book</a>");
           
           //Add text div to body div
           barberSectionBody.append(barberSectionText);

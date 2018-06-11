@@ -22,11 +22,10 @@ module.exports = function(app) {
   });
   
   // POST route for saving a new booking
-  app.post("/api/bookings", function(req, res) {
+  app.post("/api/:id/book", function(req, res) {
     db.Booking.create({
       client_id: req.body.client_id,
-      barber_id: req.body.barber_id,
-      booking_date: req.body.booking_date,
+      barber_id: req.params.id,
       booking_time: req.body.booking_time
     }).then(function(dbBooking) {
       res.json(dbBooking);
