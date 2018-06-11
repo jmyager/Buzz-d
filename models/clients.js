@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
           type: Sequelize.STRING
         },
         client_phone: {
-          type: Sequelize.INTEGER
+          type: Sequelize.STRING
         }
       }, {
         timestamps: false

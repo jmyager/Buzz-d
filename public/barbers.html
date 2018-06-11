@@ -99,14 +99,14 @@
           // Create Bootstrap Card Div for each barber
           var barberSection = $("<div class='card' style='width: 18rem;'>");
           // Add barber profile image to card
-          barberSection.append("<img class='card-img-top' src='" + barberData[i].photo + "'>");
+          barberSection.append("<img class='card-img-top' src='" + barberData[i].barber_photo + "'>");
 
           // Add body section to card with barber details
           var barberSectionBody = $("<div class='card-body'>");
           barberSectionBody.append("<h5 class='card-title'>" + barberData[i].barber_name + "</h5>")
           
           var barberSectionText = $("<div class='card-text'>");
-          barberSectionText.append("<p class='card-text'>" + "Speciality: " + barberData[i].specialty + "<br>" + "Phone: " + barberData[i].phoneNumber + "<br>" + "Email: " + barberData[i].barberEmail + "</p>")
+          barberSectionText.append("<p class='card-text'>" + "Speciality: " + barberData[i].specialty + "<br>" + "Phone: " + barberData[i].barber_phone + "<br>" + "Email: " + barberData[i].barber_email + "</p>")
           barberSectionText.append("<a href='#' class='btn btn-primary'>Book</a>");
           
           //Add text div to body div

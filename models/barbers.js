@@ -6,6 +6,9 @@ module.exports = function(sequelize, DataTypes) {
         barber_name: {
           type: Sequelize.STRING
         },
+        barber_photo: {
+          type: Sequelize.STRING
+        },
         specialty: {
           type: Sequelize.STRING
         },
@@ -13,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
           type: Sequelize.STRING
         },
         barber_phone: {
-          type: Sequelize.INTEGER
+          type: Sequelize.STRING
         }
       }, {
         timestamps: false
