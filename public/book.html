@@ -34,18 +34,20 @@
           <div class="panel-body">
 
             <form role="form">
-
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">9:00AM - 9:30AM</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">9:30AM - 10:00AM</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">10:00AM - 10:30AM</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">10:30AM - 11:00AM</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">11:00AM - 11:30PM</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">11:30PM- 12:00PM</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">12:00PM - 12:30PM</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">12:30PM - 1:00PM</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">1:00PM - 1:30PM</button>
-              <button type="button" class="btn btn-primary btn-lg btn-block" id="time">1:30PM - 2:00PM</button>
               
+
+              <div id="timebuttons"></div>
+              <!-- <button type="button" class="btn btn-primary btn-lg btn-block time">9:00AM - 9:30AM</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block time">9:30AM - 10:00AM</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block time">10:00AM - 10:30AM</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block time">10:30AM - 11:00AM</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block time">11:00AM - 11:30PM</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block time">11:30PM- 12:00PM</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block time">12:00PM - 12:30PM</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block time">12:30PM - 1:00PM</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block time">1:00PM - 1:30PM</button>
+              <button type="button" class="btn btn-primary btn-lg btn-block time" data-time="130">1:30PM - 2:00PM</button>
+               -->
 
               <div class="form-group">
                 <label for="reserve-name">Name</label>
@@ -85,17 +87,38 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
 <script type="text/javascript">
+  function runBookingsQuery() {
 
+    var currentURL = window.location.origin;
+
+    $.ajax({ url: currentURL + "/api/" + window.location.pathname.split('/')[1] + "/book", method: "GET" })
+      .then(function (bookings) {
+
+        console.log(bookings);
+      for (var i = 0; i < bookings.length; i++) {
+        var newButton;
+        if (!bookings[i].client_id) {
+          newButton = '<button type="button" class="btn btn-primary btn-lg btn-block time" data-time="'+ bookings[i].booking_time +'">' + bookings[i].booking_time + '</button>';
+        } else if (bookings[i].client_id) {
+          newButton = '<div class="notabutton">'+ bookings[i].booking_time +'</div>';
+        };
+
+        $("#timebuttons").append(newButton + "<br>");
+
+      };
+
+    });
+  };
     // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
     // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
     // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
     // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
     var timeSelected;
 
-    $("#time").on("click", function(event) {
+    $(".time").on("click", function(event) {
       event.preventDefault();
       
-      timeSelected = $("#time").val().trim();
+      timeSelected = $(event.target).data('time');
       console.log("time selected: " + timeSelected);
     });
 
@@ -116,19 +139,18 @@
       $.post("/api/clients", newClient,
       function(data) {
         clientID = data.id;
-      });
-
-      var newReservation = {
-        client_id: clientID,
-        booking_time: timeSelected
-      };
+      }).then(function(){
+        var newReservation = {
+          client_id: clientID,
+          booking_time: timeSelected
+        };
 
       // This line is the magic. It"s very similar to the standard ajax function we used.
       // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
       // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
       // depending on if a tables is available or not.
       
-      $.post("/api/:id/book", newReservation,
+      $.post("/api/" + window.location.pathname.split('/')[1] + "/book", newReservation,
         function(data) {
 
           // If a table is available... tell user they are booked.
@@ -147,7 +169,16 @@
           $("#reserve-email").val("");
 
         });
+      });
+
+
+
+
+        
+      
 
     });
+
+  runBookingsQuery();
 
 </script>

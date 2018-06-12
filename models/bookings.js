@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
           type: Sequelize.SMALLINT
         },
         booking_time: {
-          type: Sequelize.INTEGER
+          type: Sequelize.STRING
         }
       }, {
         timestamps: false

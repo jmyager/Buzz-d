@@ -10,6 +10,16 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/:id/book", function(req, res) {
+    db.Booking.findAll({ 
+      where: {
+        barber_id: req.params.id
+      }
+    }).then(function(dbBookings) {
+      res.json(dbBookings);
+    });
+  });
+
   // POST route for saving a new client
   app.post("/api/clients", function(req, res) {
     db.Client.create({
