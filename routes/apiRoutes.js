@@ -42,6 +42,19 @@ module.exports = function(app) {
     });
   });
 
+  app.put("/api/:id/book", function(req, res) {
+    db.Booking.update(
+      client_id: req.body.client_id,
+      {
+        where: {
+          barber_id: req.params.id,
+          booking_time: req.body.booking_time
+        }
+      }).then(function(dbBooking) {
+      res.json(dbBooking);
+    });
+  });
+
 };
 
 
