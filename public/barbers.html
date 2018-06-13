@@ -1,174 +1,439 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Barbers</title>
+    <title>BUZZ'd</title>
+    <link href='css/bootstrap.css' rel='stylesheet'/>
+    <link href='css/rotating-card.css' rel='stylesheet'/>
 
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/css?family=Eater|Montserrat:500" rel="stylesheet"/>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous">
-
+    </script>   
 
 </head>
+<body class="page2">
+<div class="container">
+    <div class="row">
+        <h2 class="title">
+        Meet our team
+        </h2>
+        <div class="col-sm-10 col-sm-offset-1">
+         <div class="col-md-4 col-sm-6">
+             <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="images/header.png"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="images/doug.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">Douglas</h3>
+                                <p class="profession">Barber</p>
+                                <p class="text-center">Phone: 910-289-7902</p>
+                                <p class="text-center">Email: Doug@buzzd.com</p>
+                            </div>
+                            <div class="footer">
+                                <i class="fa fa-mail-forward"></i> Auto Rotation
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"I bet the origin to the phrase, "When sh!t hits the fan," is one heck of a story."</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="text-center">Skills</h4>
+                                <p class="text-center">Douglas has a passion for the art of barbering. His strengths are in his shaves and beard work. As a well-rounded barber he is comfortable with long or short hair focusing on traditional cuts and his shear work.</p>
 
-<body>
+                                <div class="stats-container">
+                                    <div class="stats">
+                                        <h4>$15</h4>
+                                        <p>
+                                            Hair Cuts
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$7</h4>
+                                        <p>
+                                            Shave
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$20</h4>
+                                        <p>
+                                            Combo
+                                        </p>
+                                    </div>
+                                </div>
 
-  <div class="container">
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="social-links text-center">
+                                <a href='/" + barberData[i].id + "/book' class='btn btn-primary book'>Book</a>
+                            </div>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+<!--         <div class="col-sm-1"></div> -->
+        <div class="col-md-4 col-sm-6">
+                <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="images/header.png"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="images/ahmed.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">Ahmed</h3>
+                                <p class="profession">Barber/Stylist</p>
+                                <p class="text-center">Phone: 910-621-3912</p>
+                                <p class="text-center">Email: Ahmed@buzzd.com</p>
+                            </div>
+                            <div class="footer">
+                                <i class="fa fa-mail-forward"></i> Auto Rotation
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"Fear God and work hard"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="text-center">Skills</h4>
+                                <p class="text-center">Ahmed has a passion for the art of barbering. His strengths are in his shaves and beard work. As a well-rounded barber he is comfortable with long or short hair focusing on traditional cuts and his shear work.</p>
 
-    <div class="jumbotron">
-      <h1 class="text-center">
-        <span class="fa fa-fire"></span> Groove</h1>
-      <hr>
-      <h2 class="text-center">Browse our selection of unique barbers below!</h2>
-      <br>
+                                <div class="stats-container">
+                                    <div class="stats">
+                                        <h4>$15</h4>
+                                        <p>
+                                            Hair Cuts
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$7</h4>
+                                        <p>
+                                            Shave
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$20</h4>
+                                        <p>
+                                            Combo
+                                        </p>
+                                    </div>
+                                </div>
 
-      <div class="text-center">
-        <a href="/reserve">
-          <button class="btn btn-lg btn-danger">
-            <span class="fa fa-credit-card"></span>
-            Make Reservation
-          </button>
-        </a>
-        <a href="/">
-          <button class="btn btn-lg btn-default">
-            <span class="fa fa-home"></span>
-          </button>
-        </a>
-      </div>
-    </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="social-links text-center">
+                                <a href='/" + barberData[i].id + "/book' class='btn btn-primary book'>Book</a>
+                            </div>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+<!--         <div class="col-sm-1"></div> -->  
+        <div class="col-md-4 col-sm-6">
+                <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="images/header.png"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="images/eddie.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">Eddie</h3>
+                                <p class="profession">Barber</p>
+                                <p class="text-center">Phone: 919-444-1129</p>
+                                <p class="text-center">Email: Eddie@buzzd.com</p>
+                            </div>
+                            <div class="footer">
+                                <i class="fa fa-mail-forward"></i> Auto Rotation
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"Don't piss off anyone who has unlimited access to your toothbrush."</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="text-center">Skills</h4>
+                                <p class="text-center">Eddie has been cutting hair since 2010. His specialty is anything from men's regulars to tight fades. Clean shear work and tight fades are what he does best.</p>
 
-    <!-- Current Available Barbers -->
+                                <div class="stats-container">
+                                    <div class="stats">
+                                        <h4>$15</h4>
+                                        <p>
+                                            Hair Cuts
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$7</h4>
+                                        <p>
+                                            Shave
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$20</h4>
+                                        <p>
+                                            Combo
+                                        </p>
+                                    </div>
+                                </div>
 
-    <h2 class="text-center">Available Barbers</h2>
-    <hr>
-    <div class="row" id="barberSection">
-    </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="social-links text-center">
+                                <a href='/" + barberData[i].id + "/book' class='btn btn-primary book'>Book</a>
+                            </div>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+<!--         <div class="col-sm-1"></div> -->
+        <div class="col-md-4 col-sm-6">
+                <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="images/header.png"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="images/bradley.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">Bradley</h3>
+                                <p class="profession">Barber</p>
+                                <p class="text-center">Phone: 910-291-8845</p>
+                                <p class="text-center">Email: Bradley@buzzd.com</p>
+                            </div>
+                            <div class="footer">
+                                <i class="fa fa-mail-forward"></i> Auto Rotation
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"Go to a bank wearing a ski mask. complete a normal transaction. Leave as if nothing happened."</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="text-center">Skills</h4>
+                                <p class="text-center">Bradley is great at beard shaping and shaving. Bradley pays very close attention to detail and he appreciates the art and tradition of using a straight edge razor. Come see Bradley today and you won't leave disappointed.</p>
+
+                                <div class="stats-container">
+                                    <div class="stats">
+                                        <h4>$15</h4>
+                                        <p>
+                                            Hair Cuts
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$7</h4>
+                                        <p>
+                                            Shave
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$20</h4>
+                                        <p>
+                                            Combo
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="social-links text-center">
+                                <a href='/" + barberData[i].id + "/book' class='btn btn-primary book'>Book</a>
+                            </div>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+<!--         <div class="col-sm-1"></div> -->
+        <div class="col-md-4 col-sm-6">
+                <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="images/header.png"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="images/andrew.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">Andrew</h3>
+                                <p class="profession">Barber/Stylist</p>
+                                <p class="text-center">Phone: 919-021-3369</p>
+                                <p class="text-center">Email: Andrew@buzzd.com</p>
+                            </div>
+                            <div class="footer">
+                                <i class="fa fa-mail-forward"></i> Auto Rotation
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"Love is the beauty of the soul."</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="text-center">Skills</h4>
+                                <p class="text-center">Andrew puts all his focus into his craft, and really strives to listen to his clients needs, making the world a more handsome place</p>
+
+                                <div class="stats-container">
+                                    <div class="stats">
+                                        <h4>$15</h4>
+                                        <p>
+                                            Hair Cuts
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$7</h4>
+                                        <p>
+                                            Shave
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$20</h4>
+                                        <p>
+                                            Combo
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="social-links text-center">
+                                <a href='/" + barberData[i].id + "/book' class='btn btn-primary book'>Book</a>
+                            </div>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+<!--         <div class="col-sm-1"></div> -->
+        <div class="col-md-4 col-sm-6">
+                <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="images/header.png"/>
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="images/ava.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">Ava</h3>
+                                <p class="profession">Stylist</p>
+                                <p class="text-center">Phone: 919-884-8462</p>
+                                <p class="text-center">Email: Ava@buzzd.com</p>
+                            </div>
+                            <div class="footer">
+                                <i class="fa fa-mail-forward"></i> Auto Rotation
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"Have you ever had one of those days when you felt like you were the thong and the world was Rosie O donnell?"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="text-center">Skills</h4>
+                                <p class="text-center">Ava is our premeir female stylist, she specilaizes in cuts, styling, trimming, coloring, blowouts and much more</p>
+
+                                <div class="stats-container">
+                                    <div class="stats">
+                                        <h4>$25</h4>
+                                        <p>
+                                            Hair Cuts
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$35</h4>
+                                        <p>
+                                            Style
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>$45</h4>
+                                        <p>
+                                            Blow Out
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="social-links text-center">
+                                <a href='/" + barberData[i].id + "/book' class='btn btn-primary book'>Book</a>
+                            </div>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+        </div> <!-- end col-sm-10 -->
+    </div> <!-- end row -->
+
+</div>
 
 
 
-    <hr>
-    <footer class="footer">
-      <div class="container">
-        <p>Control Panel</p>
-        <p>
-          <a href="#" id="clear">Clear Table</a> |
-          <a href="/api/tables">API Table Link</a> |
-          <a href="/api/waitlist">API Wait List</a> |
-          <a href="https://github.com/jmyager/groove">GitHub Repo</a>
-        </p>
-      </div>
-    </footer>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
 
-  </div>
-
-</body>
-
-
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
 <script type="text/javascript">
+    $().ready(function(){
+        $('[rel="tooltip"]').tooltip();
 
-  // In this code, jQuery is used to "download" the data from our server
-  // We then dynamically display this content in our table. This is very similar to the group projects you just completed.
-  // It's also very similar to the NYT search application. In fact, I copied a ton of code from there.
+    });
 
-  function runBarberQuery() {
-
-    // Here we get the location of the root page.
-    // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
-    var currentURL = window.location.origin;
-
-    // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-    $.ajax({ url: currentURL + "/api/barbers", method: "GET" })
-      .then(function (barberData) {
-
-        // Here we are logging the URL so we have access to it for troubleshooting
-        console.log("------------------------------------");
-        console.log("URL: " + currentURL + "/api/barbers");
-        console.log("------------------------------------");
-
-        // Here we then log the NYTData to console, where it will show up as an object.
-        console.log(barberData);
-        console.log("------------------------------------");
-
-        // Loop through and display each of the customers
-        for (var i = 0; i < barberData.length; i++) {
-
-          // Create Bootstrap Card Div for each barber
-          var barberSection = $("<div class='card' style='width: 18rem;'>");
-          // Add barber profile image to card
-          barberSection.append("<img class='card-img-top' src='" + barberData[i].barber_photo + "'>");
-
-          // Add body section to card with barber details
-          var barberSectionBody = $("<div class='card-body'>");
-          barberSectionBody.append("<h5 class='card-title'>" + barberData[i].barber_name + "</h5>")
-          
-          var barberSectionText = $("<div class='card-text'>");
-          barberSectionText.append("<p class='card-text'>" + "Speciality: " + barberData[i].specialty + "<br>" + "Phone: " + barberData[i].barber_phone + "<br>" + "Email: " + barberData[i].barber_email + "</p>")
-          barberSectionText.append("<a href='/" + barberData[i].id + "/book' class='btn btn-primary'>Book</a>");
-          
-          //Add text div to body div
-          barberSectionBody.append(barberSectionText);
-          
-          // Add body div with details to Bootstrap Card Div
-          barberSection.append(barberSectionBody);
-          
-          var barberCol = $("<div class='col-md-4'>");
-          barberCol.append(barberSection);
-          $("#barberSection").append(barberCol);
-
-
-          ///////////////////////////////////////////////////////
-
-          // // Create row for every 2 cards
-          // if (i % 2 === 0) {
-          //   var barberRow = $("<div class='row' id='barberRow-" + i + "'>");
-          //   var barberCol = $("<div class='col-md-4'>");
-          //   barberCol.append(barberSection);
-          //   barberRow.append(barberCol);
-          //   $("#barberSection").append(barberRow);
-          // }
-          // // Don't create row if first card of new row
-          // else {
-          //   // Append newly created barber card to page div
-          //   $("#barberRow-" + i - 1).append(barberSection);
-          // }
-
-          /////////////////////////////////////////////////
-
-
-
+    function rotateCard(btn){
+        var $card = $(btn).closest('.card-container');
+        console.log($card);
+        if($card.hasClass('hover')){
+            $card.removeClass('hover');
+        } else {
+            $card.addClass('hover');
         }
-      });
-  }
-
-
-
-  // This function resets all of the data in our tables. This is intended to let you restart a demo.
-  function clearBarber() {
-
-    var currentURL = window.location.origin;
-    $.ajax({ url: currentURL + "/api/clear", method: "POST" });
-
-  }
-
-  $("#clear").on("click", function () {
-    alert("Clearing...");
-    clearBarber();
-
-    // Refresh the page after data is cleared
-    location.reload();
-
-  });
-
-
-  // Run Queries!
-  // ==========================================
-  runBarberQuery();
-
-
+    }
 </script>
 
+
+</body>
 </html>

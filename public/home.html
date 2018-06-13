@@ -1,39 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Tables Page</title>
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-<body>
-
-  <div class="container">
-
-    <div class="jumbotron">
-      <h1 class="text-center"><span class="fa fa-fire"></span> Groove</h1>
-      <hr>
-      <h2 class="text-center">Find a barber. Book a barber. Groovy!</h2>
-      <br>
-
-      <div class="text-center">
-        <a href="/barbers"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> View Barbers</button></a>
-        <a href="/reserve"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make a Booking</button></a>
-      </div>
-
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width', initial-scale=1.0>
+        <meta http-equiv='X-UA-Compatible' content='ie-edge'>
+        <title>BUZZ'd</title>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+        </script>
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+          <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+          <link href="https://fonts.googleapis.com/css?family=Eater|Montserrat:200" rel="stylesheet">
+    </head>
+<body>   
+    <div class="page-container">
+        <div class="page-back"></div>
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p><a href="/api/barbers">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/jmyager/groovy">GitHub Repo</a></p>
-      </div>
-    </footer>
-
-  </div>
-
-
+    <div class="container">
+        <div class="row" id="header">
+            <h1 class= "orange-text center" id="title">Buzz'd</h1>
+            <h4 class="white-text center" id="subtitle">A better haircut experience</h4>
+        </div>
+        
+        <div class="row" id="body">
+            <span class="white-text center"><h3>Midway Barbershop</h3></span>
+                <ul class="white-text center">
+                    <li><h4>(919)942-6338</h4></li>
+                    <li><h5>707 W Rosemary ST</h5></li>
+                    <li><h5>Carrboro, NC 27510</h5></li>
+                    <hr class="line">
+                    <li>Monday (closed)</li>
+                    <li>Tuesday 9AM-6:30PM</li>
+                    <li>Wednesday 9AM-6:30PM</li>
+                    <li>Thursday 9AM-6:30PM</li>
+                    <li>Friday 9AM-6:30PM</li>
+                    <li>Saturday 9AM-6:30PM</li>
+                    <li>Sunday 12pm-5pm</li>
+                </ul>
+        </div>        
+        <div class="row center" id="button1">
+            <a href="/barbers" id="download-button" class="btn-large waves-effect waves-light orange pulse"><i class="material-icons right">arrow_forward</i>View Barbers</a>
+        </div>
+    </div>
+        <script type="text/javascript">
+            var windowWidth =$(window).width();
+            $('.page-container').mousemove(function(event){
+                var moveX = (($(window).width() /2) - event.pageX) * 0.1;
+                var moveY = (($(window).height() /2) - event.pageY) * 0.1;
+                $('.page-back').css('margin-left', moveX + 'px');
+                $('.page-back').css('margin-top', moveY + 'px');
+            });
+            $('.container').mousemove(function(event){
+                var moveX = (($(window).width() /2) - event.pageX) * 0.1;
+                var moveY = (($(window).height() /2) - event.pageY) * 0.1;
+                $('.page-back').css('margin-left', moveX + 'px');
+                $('.page-back').css('margin-top', moveY + 'px');
+            });
+        </script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
 </body>
 </html>
