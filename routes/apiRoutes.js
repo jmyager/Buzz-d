@@ -45,7 +45,7 @@ module.exports = function(app) {
   app.put("/api/:id/book", function(req, res) {
     db.Booking.update({
       client_id: req.body.client_id,
-      
+      booking_time: req.body.booking_time,
         where: {
           barber_id: req.params.id,
           booking_time: req.body.booking_time
