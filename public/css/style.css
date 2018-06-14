@@ -67,3 +67,19 @@ section{
     color: orange;
     border: 2px solid orange;
 }
+
+.form-group {
+    width: 900px;
+    background-color: orange;
+    opacity: 0.75;
+    padding: 40px;
+    border-radius: 3px;
+    margin-top: 40px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: orange;
+    border-color: gray !important;
+}
