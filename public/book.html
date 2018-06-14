@@ -103,7 +103,7 @@
         if (!bookings[i].client_id) {
           newButton = '<button type="button" class="btn btn-primary btn-lg btn-block time" data-time="'+ bookings[i].booking_time +'" data-bookid="'+ bookings[i].id +'">' + bookings[i].booking_time + '</button>';
         } else if (bookings[i].client_id) {
-          newButton = '<button type="button" class="btn btn-secondary btn-lg btn-block notabutton">'+ bookings[i].booking_time +'</div>';
+          newButton = '<button type="button" class="btn btn-secondary btn-lg btn-block notabutton">'+ bookings[i].booking_time +'</button>';
         };
 
         $("#timebuttons").append(newButton + "<br>");

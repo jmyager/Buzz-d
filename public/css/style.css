@@ -83,3 +83,7 @@ section{
     background-color: orange;
     border-color: gray !important;
 }
+
+.notabutton {
+    background-color: gray !important;
+}
