@@ -124,54 +124,58 @@
 
 
     $(".submit").on("click", function(event) {
-      event.preventDefault();
+        event.preventDefault();
 
-      // Here we grab the form elements
-      var newClient = {
-        client_name: $("#reserve-name").val().trim(),
-        client_phone: $("#reserve-phone").val().trim(),
-        client_email: $("#reserve-email").val().trim()
-      };
+        // Here we grab the form elements
+        var newClient = {
+          client_name: $("#reserve-name").val().trim(),
+          client_phone: $("#reserve-phone").val().trim(),
+          client_email: $("#reserve-email").val().trim()
+        };
 
-      console.log(newClient);
-      var clientID;
+        console.log(newClient);
+        var clientID;
 
-      $.post("/api/clients", newClient,
-      function(data) {
-        clientID = data.id;
-      }).then(function(){
+        $.post("/api/clients", newClient,
+        function(data) {
+          clientID = data.id;
+        })
+      .then(function(){
         var newReservation = {
           client_id: clientID,
           booking_time: timeSelected
         };
 
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
-      
-      $.put("/api/" + window.location.pathname.split('/')[1] + "/book", newReservation,
-        function(data) {
+        // This line is the magic. It"s very similar to the standard ajax function we used.
+        // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+        // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+        // depending on if a tables is available or not.
+        
 
-          // If a table is available... tell user they are booked.
+        $.ajax({
+        method: "PUT",
+        url: "/api/" + window.location.pathname.split('/')[1] + "/book",
+        data: newReservation
+        })
+        .then(function(data) {
           if (data) {
             alert("Yay! You are officially booked!");
           }
 
-          // If a table is available... tell user they on the waiting list.
+            // If a table is available... tell user they on the waiting list.
           else {
-            alert("Sorry you are on the wait list");
+            alert("Sorry there's been an error");
           }
 
-          // Clear the form when submitting
+            // Clear the form when submitting
           $("#reserve-name").val("");
           $("#reserve-phone").val("");
           $("#reserve-email").val("");
 
         });
+      
+
       });
-
-
 
 
         
