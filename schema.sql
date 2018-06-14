@@ -1,8 +1,9 @@
-USE dsounuh5z7xv9iih;
+USE groove_db;
 
-CREATE TABLE barbers (
+CREATE TABLE Barbers (
 	id INT AUTO_INCREMENT NOT NULL,
 	barber_name VARCHAR(30) NOT NULL,
+    barber_photo VARCHAR(30) NOT NULL,
 	specialty VARCHAR(30),
     barber_email VARCHAR(30) NOT NULL,
     barber_phone VARCHAR(30) NOT NULL,
@@ -10,7 +11,7 @@ CREATE TABLE barbers (
 	PRIMARY KEY(id)
 );
 
-CREATE TABLE clients (
+CREATE TABLE Clients (
 	id INT AUTO_INCREMENT NOT NULL,
 	client_name VARCHAR(30) NOT NULL,
     client_email VARCHAR(30) NOT NULL,
@@ -19,7 +20,7 @@ CREATE TABLE clients (
     PRIMARY KEY(id)
 );
 
-CREATE TABLE bookings (
+CREATE TABLE Bookings (
 	id INT AUTO_INCREMENT NOT NULL,
     client_id SMALLINT NOT NULL REFERENCES clients(id),
     barber_id SMALLINT NOT NULL REFERENCES barbers(id),

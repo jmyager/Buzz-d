@@ -31,7 +31,7 @@ INSERT INTO Bookings (barber_id, booking_time) VALUES (2, "3:30-4:00 PM");
 INSERT INTO Bookings (barber_id, booking_time) VALUES (2, "4:00-4:30 PM");
 
 INSERT INTO Bookings (barber_id, booking_time) VALUES (3, "9:30-10:00 AM");
-INSERT INTO Bookings (barber_id, booking_time) VALUES (3, "10:00-10:30 AM";
+INSERT INTO Bookings (barber_id, booking_time) VALUES (3, "10:00-10:30 AM");
 INSERT INTO Bookings (barber_id, booking_time) VALUES (3, "10:30-11:00 AM");
 INSERT INTO Bookings (barber_id, booking_time) VALUES (3, "11:00-11:30 AM");
 INSERT INTO Bookings (barber_id, booking_time) VALUES (3, "11:30-12:00 AM");

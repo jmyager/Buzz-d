@@ -43,7 +43,7 @@ module.exports = function(app) {
   });
 
   app.put("/api/:id/book", function(req, res) {
-    db.Booking,findOne({
+    db.Booking.findOne({
       where: {
         id: req.body.id
       }
