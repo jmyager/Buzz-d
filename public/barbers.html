@@ -417,6 +417,10 @@
 <script src="js/bootstrap.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer-time/1.1.0/hammer-time.js" type="text/javascript"></script>
+<script src="../js/jquery.hammer.js" type="text/javascript"></script>
+
 <script type="text/javascript">
     $().ready(function(){
         $('[rel="tooltip"]').tooltip();
@@ -430,8 +434,17 @@
             $card.removeClass('hover');
         } else {
             $card.addClass('hover');
-        }
-    }
+        };
+    };
+
+    var hammertime = new Hammer(document);
+    hammertime.on('tap', function(ev) {
+        console.log("tap registered");
+    });
+    hammertime.on("swipe", function(ev) {
+        console.log("swipe registered");
+    });
+
 </script>
 
 
