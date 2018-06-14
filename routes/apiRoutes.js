@@ -45,8 +45,7 @@ module.exports = function(app) {
   app.put("/api/:id/book", function(req, res) {
     db.Booking,findOne({
       where: {
-        barber_id: req.params.id,
-        booking_time: req.body.booking_time
+        id: req.body.id
       }
     })
     .then(booking=>{

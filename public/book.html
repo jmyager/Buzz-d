@@ -98,7 +98,7 @@
       for (var i = 0; i < bookings.length; i++) {
         var newButton;
         if (!bookings[i].client_id) {
-          newButton = '<button type="button" class="btn btn-primary btn-lg btn-block time" data-time="'+ bookings[i].booking_time +'">' + bookings[i].booking_time + '</button>';
+          newButton = '<button type="button" class="btn btn-primary btn-lg btn-block time" data-time="'+ bookings[i].booking_time +'" data-bookID="'+ bookings[i].id +'">' + bookings[i].booking_time + '</button>';
         } else if (bookings[i].client_id) {
           newButton = '<div class="notabutton">'+ bookings[i].booking_time +'</div>';
         };
@@ -114,12 +114,15 @@
     // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
     // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
     var timeSelected;
+    var bookingID;
 
     $(".time").on("click", function(event) {
       event.preventDefault();
       
       timeSelected = $(event.target).data('time');
+      bookingID = $(event.target).data('bookID');
       console.log("time selected: " + timeSelected);
+      console.log("booking id = " + bookingID);
     });
 
 
@@ -142,6 +145,7 @@
         })
       .then(function(){
         var newReservation = {
+          id: bookingID,
           client_id: clientID,
           booking_time: timeSelected
         };
