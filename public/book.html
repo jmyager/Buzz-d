@@ -98,7 +98,7 @@
       for (var i = 0; i < bookings.length; i++) {
         var newButton;
         if (!bookings[i].client_id) {
-          newButton = '<button type="button" class="btn btn-primary btn-lg btn-block time" data-time="'+ bookings[i].booking_time +'" data-bookID="'+ bookings[i].id +'">' + bookings[i].booking_time + '</button>';
+          newButton = '<button type="button" class="btn btn-primary btn-lg btn-block time" data-time="'+ bookings[i].booking_time +'" data-bookid="'+ bookings[i].id +'">' + bookings[i].booking_time + '</button>';
         } else if (bookings[i].client_id) {
           newButton = '<div class="notabutton">'+ bookings[i].booking_time +'</div>';
         };
@@ -116,11 +116,11 @@
     var timeSelected;
     var bookingID;
 
-    $(".time").on("click", function(event) {
+    $("#timebuttons").on("click", '.time', function(event) {
       event.preventDefault();
       
       timeSelected = $(event.target).data('time');
-      bookingID = $(event.target).data('bookID');
+      bookingID = $(event.target).data('bookid');
       console.log("time selected: " + timeSelected);
       console.log("booking id = " + bookingID);
     });

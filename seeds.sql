@@ -104,4 +104,4 @@ VALUES ("Bradley", "bradley.png", "Bradley is great at beard shaping and shaving
 INSERT INTO Barbers (barber_name, barber_photo, specialty, barber_email, barber_phone)
 VALUES ("Andrew", "andrew.png", "Andrew puts all his focus into his craft, and really strives to listen to his clients needs, making the world a more handsome place.", "Andrew@buzzd.com", "919-021-3369");
 INSERT INTO Barbers (barber_name, barber_photo, specialty, barber_email, barber_phone)
-VALUES ("Ava", "ava.png", "Ava is our premeir female stylist, she specilaizes in cuts, styling, trimming, coloring, blowouts and much more.", "Ava@buzzd.com", "919-884-8462");
+VALUES ("Ava", "ava.png", "Ava is our premiere female stylist, she specilaizes in cuts, styling, trimming, coloring, blowouts and much more.", "Ava@buzzd.com", "919-884-8462");
