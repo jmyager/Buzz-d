@@ -54,7 +54,7 @@ module.exports = function(app) {
       })
     })
     .then(savedBooking=>{
-      res.json(savedBooking.dataValues);
+      res.json(savedBooking);
     })
     .catch(err=>{
       console.log(err);
