@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="../../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
 
 </head>
 <body>
@@ -103,7 +103,7 @@
         if (!bookings[i].client_id) {
           newButton = '<button type="button" class="btn btn-primary btn-lg btn-block time" data-time="'+ bookings[i].booking_time +'" data-bookid="'+ bookings[i].id +'">' + bookings[i].booking_time + '</button>';
         } else if (bookings[i].client_id) {
-          newButton = '<div class="notabutton">'+ bookings[i].booking_time +'</div>';
+          newButton = '<button type="button" class="btn btn-secondary btn-lg btn-block notabutton">'+ bookings[i].booking_time +'</div>';
         };
 
         $("#timebuttons").append(newButton + "<br>");
@@ -118,6 +118,13 @@
     // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
     var timeSelected;
     var bookingID;
+
+    
+    $("#timebuttons").on("click", '.notabutton', function(event) {
+      event.preventDefault();
+      
+      alert("Oh no! The time you clicked is unavailable. The open times appear in blue!")
+    });
 
     $("#timebuttons").on("click", '.time', function(event) {
       event.preventDefault();
