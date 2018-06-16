@@ -7,7 +7,7 @@
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  
   <link href="../../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -18,13 +18,21 @@
 
   <div class="container">
 
+    <div class="jumbotron">
+      <h1 class="text-center"><span class="fa fa-fire"></span>Groovy</h1>
+      <hr>
+      <h2 class="text-center">Book your Barber!</h2>
+      <br>
+
+    </div>
+
     <div class="row">
       <div class="col-lg-12">
 
         <!-- Reservation Page -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title" id="barberbooking">Barber Booking</h2>
+            <h4 class="panel-title">Barber Booking</h4>
           </div>
           <div class="panel-body">
 
@@ -108,7 +116,7 @@
     $("#timebuttons").on("click", '.notabutton', function(event) {
       event.preventDefault();
       
-      alert("Oh no! The time you clicked is unavailable. The open times appear in blue!")
+      alert("Oh no! The time you clicked is unavailable. The open times appear in orange!")
     });
 
     $("#timebuttons").on("click", '.time', function(event) {
