@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width', initial-scale=1.0>
+    <meta http-equiv='X-UA-Compatible' content='ie-edge'>
+    <title>BUZZ'd</title>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="../../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+      <link href="../../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/css?family=Eater|Montserrat:200" rel="stylesheet">
+  </head>
+<body>
+  <div class="container">
+    <div class="row" id="header">
+      <h1 class= "center" id="title">Buzz'd</h1>
+      <h4 class="white-text center" id="subtitle">A better haircut experience</h4>
+    </div>
+    <div class="row box">
+      <div class="col s12 l6  center">
+        <div class="input-field">
+          <i class="material-icons white700 prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">First Name</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons white700 prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Telephone</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons white700 prefix">email</i>
+          <input id="icon_email" type="tel" class="validate">
+          <label for="icon_email">Email</label>
+        </div>
+      </div>
+      <div class="col s12 l6 center times">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Pick a time!</a>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">9:00AM - 9:30AM</a></li>
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="#!">9:30AM -10:00AM</a></li>
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="#!">10:00AM - 10:30AM</a></li>
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="#!">10:30AM - 11:00AM</a></li>
+          <li class="divider" tabindex="-1"></li>
+          <li><a href="#!">11:00AM - 11:30AM</a></li>
+          <li class="divider" tabindex="-1"></li>
+        </ul>
+        
+        <hr>
+        <button class="btn waves-effect waves-light orange" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+  
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, options);
+  });
+
+</script>
+        
+
+  <script src="../../js/materialize.js"></script>
+  <script src="../../js/init.js"></script>
+</body>
+</html>

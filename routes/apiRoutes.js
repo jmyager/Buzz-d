@@ -10,6 +10,16 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/:id/book", function(req, res) {
+    db.Booking.findAll({ 
+      where: {
+        barber_id: req.params.id
+      }
+    }).then(function(dbBookings) {
+      res.json(dbBookings);
+    });
+  });
+
   // POST route for saving a new client
   app.post("/api/clients", function(req, res) {
     db.Client.create({
@@ -22,14 +32,33 @@ module.exports = function(app) {
   });
   
   // POST route for saving a new booking
-  app.post("/api/bookings", function(req, res) {
+  app.post("/api/:id/book", function(req, res) {
     db.Booking.create({
       client_id: req.body.client_id,
-      barber_id: req.body.barber_id,
-      booking_date: req.body.booking_date,
+      barber_id: req.params.id,
       booking_time: req.body.booking_time
     }).then(function(dbBooking) {
       res.json(dbBooking);
+    });
+  });
+
+  app.put("/api/:id/book", function(req, res) {
+    db.Booking.findOne({
+      where: {
+        id: req.body.id
+      }
+    })
+    .then(booking=>{
+      return booking.update({
+        client_id: req.body.client_id
+      })
+    })
+    .then(savedBooking=>{
+      res.json(savedBooking);
+    })
+    .catch(err=>{
+      console.log(err);
+      res.status(500);
     });
   });
 

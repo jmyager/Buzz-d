@@ -19,7 +19,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/barbers.html"));
   });
 
-  app.get("/book", function(req, res) {
+  app.get("/:id/book", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/book.html"));
   });
 
