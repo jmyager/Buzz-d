@@ -24,3 +24,6 @@ Buzz'd is a new type of barbershop experience, where booking your haircut become
 
 ## Demo
 View the [live demo](https://fathomless-depths-99227.herokuapp.com/)
+
+![Screenshot 2](/public/images/screen2.png?raw=true "Screenshot 2")
+
