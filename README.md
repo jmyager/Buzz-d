@@ -17,7 +17,7 @@ Each month, the majority of the population requires a haircut. Some go to salons
 
 After speaking with several local barbershop owners, we set out to numb the pain.
 
-[[https://github.com/jmyager/Buzz-d/public/images/screen1.png|alt=screenshow1]]
+![Screenshot 1](/public/images/screen1.png?raw=true "Screenshot 1")
 
 ## Overview
 Buzz'd is a new type of barbershop experience, where booking your haircut becomes a breeze. The customer can open the barbershop's app or website, browse available stylists (as well as their specialties, prices, and deals), and book an appointment with just a few clicks. Gone are the days of a 60 minute walk-in. And for the barbers, customer information and booking slots are all safely stored in the barbershop's personal database.
